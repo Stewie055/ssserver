@@ -38,8 +38,8 @@ def reset():
         f.write('password:%s\n'%password)
         f.write('port:%s\n'%port)
         f.close()
-    stop()
-    start(password,port)
+    #stop()
+    #start(password,port)
 
 
 if __name__ == '__main__':
