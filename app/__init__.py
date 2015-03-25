@@ -9,12 +9,12 @@ def indext():
     conf = readconf()
     password = conf['password']
     port = conf['port']
-    host = {'ip':'test',
+    host = {'ip':'ss.ibat.me',
             'password':password,
             'port':port}
     return render_template('index.html',host=host)
 
-@app.route('/new')
+@app.route('/new/')
 def refresh():
     reset()
     return redirect('/')

@@ -11,6 +11,7 @@ def readconf(fname='ss.conf'):
 
 def start(password,port):
     status = call(['ssserver','-p',str(port),'-k',password,'-m','rc4-md5','-d','start'])
+    print(status,port,password)
 
 def stop():
     status = call(['ssserver','-d','stop'])
@@ -26,7 +27,9 @@ def reset():
         f.write('password:%s\n'%password)
         f.write('port:%s\n'%port)
         f.close()
-    restart(password,port)
+    stop()
+    start(password,port)
+
 
 if __name__ == '__main__':
     reset()
